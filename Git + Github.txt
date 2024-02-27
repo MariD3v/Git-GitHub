@@ -1,0 +1,22 @@
+Git + Github en la NUBE
+
+como sincronizar github con nuestro pc: 2:47:00
+https://www.youtube.com/watch?v=3GymExBkKjE&t=9764s
+
+git remote add origin git@github.com:LittleMari/Nombredelproyecto : Para que Github trackee el proyecto
+git push -u origin main : Subir contenido a la rama main de Github
+git fetch : Visualiza los cambios hechos en la nube al historial en local pero no actualiza el proyecto local
+git pull: Trae los cambios hechos en la nube al historial y al proyecto local
+git clone git@github.com:Nombrepersonadelproyecto/Nombredelproyecto : Carga un proyecto entero desde github a local
+
+fork: clonar un repositorio de otra persona en nuestro perfil de github para poder editarlo
+pull-request: Pedir a un usuario que actualice su repositorio con los cambios que hemos hechos nosotros
+main: rama principal
+release: rama de versiones
+features: rama donde programar y realizar cambios
+
+Existen interfaces gráficas para Git y Github: GitKraken...
+
+Github sigue la siguiente sintaxis en su código:Https://docs.github.com/es/get-started/writing-on-github
+
+Github pages: Caracteristica de github que permite subir una pagina web a un servidor de manera gratuita

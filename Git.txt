@@ -1,0 +1,40 @@
+Comandos básicos de Git EN LOCAL
+
+Para comenzar a usar git debemos tener asociado git a una usuario y un email:
+
+git config --global user.name "Mari" #Así asociamos nuestro usuario
+git config --global user.email "mari.d3v@gmail.com" #Así asociamos nuestro email
+
+Para usar git con un proyecto determinado nos vamos a la ruta del proyecto y dentro de este ejecutamos:
+
+git init
+
+Más comandos:
+
+git branch -m main #Para cambiar el nombre de una rama a main
+git status #Ver el estado de nuestro proyecto (Qué hay sin track, modificado...etc)
+git add (nombre de fichero) #Añadir ficheros para ser trackeados y posteriormente commitearlos. Para añadir todos los ficheros disponibles de golpe: git add . 
+git commit -m "Mensaje que describa nuestro comit" #Una vez que tengamos los ficheros que queramos commitear trackeados con git add, usamos git commit para hacer la "captura" del proyecto
+git log #Ver información de todos los commits creados, donde nos indica la rama, el comit y donde nos encontramos (HEAD).Extras: --graph (verlo graficamente) --decorate(Podemos ver el Id/Hash) --all --oneline 
+git checkout #Nos permite desplazarnos entre commits. Poniendo el id/hash/tag del commit al que queremos desplazarnos o no poniendo nada y nos llevaria al ultimo commit creado. También elimina lo que no se haya guardado al desplazarse, y deshace cambios. Incluso, nos permite moverlos a ramas o ficheros eliminados en git, porque git nunca elimina del todo.
+git config --global alias.(nombre de funcion) "(conjunto de funciones)" #Nos permite utilizar alias para llamar a un conjunto de funciones. Ejmp: git config --global alias.tree "log --graph --decorate --all --oneline", de esta forma crearemos el alias tree, y cuando pongamos git tree nos ejecutara esos comandos 
+touch .gitignore #Nos crea el archivo .gitignore, usado para meter dentro aquellos archivos que se encuentren en la carpeta del proyecto que no queremos que se hagan commit nunca. Dentro los nombres se añadirian asi: **/(nombre de fichero)
+git diff #Nos informa de los cambios que hay en los ficheros que aun no han sido commiteados pero si trackeados con respecto a el commit anterior
+git reset --hard (id/hash al que queremos regresar) #Nos desplaza al hash elegido, pero elimina todos los commits posteriores. Tambien puede usarse al contrario: poniendo el id que queremos restaurar en nuestra rama (borrado anteriormente con reset)
+git reflog #Muestra todos los cambios hechos en git (Un historial completo). Tanto eliminados como movimientos...etc
+git tag (nombre del tag) #Para añadir etiquetas al commit que queramos Ejmpl: Para indicar la versión o anotar cosas en ese commit
+git branch (nombre de rama nueva) #Nos permite crear nuevas ramas
+git switch #Nos permite desplazarnos entre ramas
+git merge (nombre de la rama que queremos traer su contenido a la rama en la que nos situamos) #Nos permite juntar contenido de 2 ramas, situandonos en la que queremos consevar y llamando a la que queremos traer
+git stash #Nos permite guardar en stash nuestro codigo sin terminar para luego volver a el en caso de que tengamos que dejarlo asi, pero sin crear un nuevo commit.
+git stash list #Nos muestra los stash disponibles
+git stash pop #Nos desplaza al stash guardado
+git stash drop #Nos elimina el stash guardado
+git branch -d (nombre de rama a eliminar) #Para cuando despues de hacer un merge a la rama principal, cuando ya no queramos para nada la rama secundaria porque ha finalizado su uso y queremos eliminarla.
+
+GitFlow para flujos más complejos (proyectos con muchas ramas...):
+Una vez instalado, usamos git flow init para ejecutarlo sobre el proyecto en el que estemos
+git flow feature start nombrederama : Crear una rama en Gitflow
+git flow feature finish nombrederama : Cerrar una rama en Gitflow (Hace un merge de feature a develop y elimina la rama)
+
+Mejor explicado: https://training.github.com/downloads/es_ES/github-git-cheat-sheet.pdf
